@@ -21,7 +21,8 @@ jobs:
         python-version: "3.10"
     - name: Install dependencies
       run: |
-        git clone https://github.com/osscameroon/broken_link_checker.git .
+        git clone https://github.com/osscameroon/broken_link_checker.git blc
+        cd blc
         git checkout patch
         pip install -r requirements.txt
     - name: Test
@@ -37,7 +38,8 @@ jobs:
         python-version: "3.10"
     - name: Install dependencies
       run: |
-        git clone https://github.com/osscameroon/broken_link_checker.git .
+        git clone https://github.com/osscameroon/broken_link_checker.git blc
+        cd blc
         git checkout patch
         pip install -r requirements.txt
     - name: Test
