@@ -36,7 +36,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Install dependencies
         run: |
-          ./install_deps.sh
+          sh ./install_deps.sh
       - name: Play
         run: |
           $CMD https://blog.osscameroon.com
