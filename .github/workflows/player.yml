@@ -11,7 +11,7 @@ permissions:
   contents: read
 
 env:
-  CMD: python blc -D -n -d .5
+  CMD: python broken_link_checker.blc -D -n -d .5
 
 jobs:
   ossblog:
