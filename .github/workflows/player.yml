@@ -23,16 +23,18 @@ jobs:
       with:
         python-version: "3.10"
     - name: Install dependencies
-      run: install_deps.sh
+      run: |
+        install_deps.sh
     - name: Play
       run: |
-        ${{ CMD }} https://osscameroon.com
+        $CMD https://osscameroon.com
   blog:
     name: Checking of https://blog.osscameroon.com
     runs-on: ubuntu-latest
     steps:
       - name: Install dependencies
-        run: install_deps.sh
+        run: |
+          install_deps.sh
       - name: Play
         run: |
           $CMD https://blog.osscameroon.com
