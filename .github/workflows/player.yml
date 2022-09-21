@@ -35,5 +35,5 @@ jobs:
         run: install_deps.sh
       - name: Play
         run: |
-          ${{ CMD }} https://blog.osscameroon.com
+          $CMD https://blog.osscameroon.com
 
