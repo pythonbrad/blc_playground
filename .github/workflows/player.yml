@@ -10,9 +10,6 @@ on:
 permissions:
   contents: read
 
-env:
-  CMD: python -m blc.blc -D -n -d .5
-
 jobs:
   ossblog:
     name: Checking of https://osscameroon.com
@@ -28,7 +25,7 @@ jobs:
         sh ./install_deps.sh
     - name: Play
       run: |
-        $CMD -b 1 https://osscameroon.com
+        HOST=https://osscameroon.com sh ./play.sh
   osswebsite:
     name: Checking of https://blog.osscameroon.com
     runs-on: ubuntu-latest
@@ -39,5 +36,5 @@ jobs:
           sh ./install_deps.sh
       - name: Play
         run: |
-          $CMD -b 1 https://blog.osscameroon.com
+          HOST=https://blog.osscameroon.com sh ./play.sh
 
