@@ -1,0 +1,31 @@
+name: notify on broken link detected
+on:
+  workflow_call:
+    secrets:
+      TELEGRAM_CHAT_ID:
+        description: 'Specify the telegram channel id'
+        required: true
+      TELEGRAM_BOT_TOKEN:
+        description: 'Specify telegram bot token'
+        required: true
+
+jobs:
+  notify:
+    defaults:
+      run:
+        working-directory: ./.github/workflows/notify_on_broken_link_detected
+    name: notify
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: osscameroon/global-github-actions
+      - name: Install the broken link checker
+        shell: bash
+        run: |
+          git clone https://github.com/osscameroon/broken_link_checker.git blc
+          pip install -r blc/requirements.txt
+      - name: Check the websites
+        shell: bash
+        run: |
+          ./run.sh
